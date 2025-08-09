@@ -41,7 +41,7 @@ fig.add_trace(go.Bar(
     x=glm_label,
     y=glm_ev,
     name='GLM (No Tuning)',
-    marker_color='#B0BEC5',  # Neutral gray
+    marker_color='#B0BEC5',
     text=[f"{v:.4f}" for v in glm_ev],
     textposition='outside'
 ))
@@ -53,8 +53,14 @@ fig.update_layout(
     yaxis_title='Explained Variance',
     yaxis=dict(range=[0, y_max]),
     barmode='group',
-    legend=dict(x=0.75, y=1.1),
-    margin=dict(t=80, b=40),
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=1.02,
+        xanchor='center',
+        x=0.5
+    ),
+    margin=dict(t=100, b=40),
     height=500
 )
 
